@@ -18,9 +18,7 @@ class ClearTokenCommand extends Command{
 
   protected function execute(InputInterface $input, OutputInterface $output)
   {
-    $redis = $this->getApplication()->getKernel()->getContainer()->get('my.RedisLogic');
-    $redis->delkey('access_token');
-    $redis->delkey('access_ticket');
+    $this->getApplication()->getKernel()->getContainer()->get('my.Wechat')->WechatKey_access_token(true);
     $output->writeln('<info>clear token success</info>');
   }
 
