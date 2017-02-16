@@ -23,7 +23,7 @@ class DealGetLogCommand extends Command{
   }
 
   protected function DealLog(){
-    $sql2 = "SELECT max(`analyseid`) as maxid FROM `request_analysis`";
+    $sql2 = "SELECT max(`analyseid`) as maxid FROM `request_analyse`";
     $db = $this->getApplication()->getKernel()->getContainer()->get('my.dataSql');
     $analyse = $db->querysql($sql2);
     $start_id = 0;
@@ -54,7 +54,7 @@ class DealGetLogCommand extends Command{
           'analyseid' => $result['0']['id'],
           'CreateTime' => $result['0']['createTime'],
         );
-        $db->insertData($data, 'request_analysis');
+        $db->insertData($data, 'request_analyse');
         if(method_exists($this, 'request_'.$data['MsgType'])){
           call_user_func_array(array($this, 'request_'.$data['MsgType']), array($postObj, $data['analyseid']));
         }
