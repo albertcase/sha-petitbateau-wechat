@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.33, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.19, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: valextra_wechat
+-- Host: localhost    Database: mtu_db
 -- ------------------------------------------------------
--- Server version	5.6.33-0ubuntu0.14.04.1-log
+-- Server version	5.6.19-0ubuntu0.14.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -399,7 +399,7 @@ CREATE TABLE `wechat_admin` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -408,7 +408,7 @@ CREATE TABLE `wechat_admin` (
 
 LOCK TABLES `wechat_admin` WRITE;
 /*!40000 ALTER TABLE `wechat_admin` DISABLE KEYS */;
-INSERT INTO `wechat_admin` VALUES (1,'admin','9f1afee1b1e64871f1dc70174d014933','2017-01-05 09:55:37','2016-05-13 09:25:01');
+INSERT INTO `wechat_admin` VALUES (1,'admin','9f1afee1b1e64871f1dc70174d014933','2017-02-15 07:42:17','2016-05-13 09:25:01');
 /*!40000 ALTER TABLE `wechat_admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -482,7 +482,7 @@ CREATE TABLE `wechat_getmsglog` (
   `msgXml` blob NOT NULL,
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -491,7 +491,6 @@ CREATE TABLE `wechat_getmsglog` (
 
 LOCK TABLES `wechat_getmsglog` WRITE;
 /*!40000 ALTER TABLE `wechat_getmsglog` DISABLE KEYS */;
-INSERT INTO `wechat_getmsglog` VALUES (1,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611111</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[🙃🙃🙃🙃]]></Content>\n<MsgId>6372061202149830520</MsgId>\n</xml>','2017-01-05 10:11:51'),(2,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611167</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[a]]></Content>\n<MsgId>6372061442667999108</MsgId>\n</xml>','2017-01-05 10:12:47'),(3,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611173</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[hhh]]></Content>\n<MsgId>6372061468437802886</MsgId>\n</xml>','2017-01-05 10:12:54'),(4,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611179</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[a]]></Content>\n<MsgId>6372061494207606666</MsgId>\n</xml>','2017-01-05 10:12:59'),(5,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611189</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[a]]></Content>\n<MsgId>6372061537157279633</MsgId>\n</xml>','2017-01-05 10:13:09'),(6,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611286</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[a]]></Content>\n<MsgId>6372061953769107368</MsgId>\n</xml>','2017-01-05 10:14:46'),(7,'oFnmEwXwuGha8zvqN63cJJqIACsE','text','<xml><ToUserName><![CDATA[gh_49b6b08d624c]]></ToUserName>\n<FromUserName><![CDATA[oFnmEwXwuGha8zvqN63cJJqIACsE]]></FromUserName>\n<CreateTime>1483611396</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[a]]></Content>\n<MsgId>6372062426215509943</MsgId>\n</xml>','2017-01-05 10:16:36');
 /*!40000 ALTER TABLE `wechat_getmsglog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -551,6 +550,64 @@ LOCK TABLES `wechat_keyword_tag` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wechat_material`
+--
+
+DROP TABLE IF EXISTS `wechat_material`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wechat_material` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `media_id` varchar(255) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `material_media_id` (`media_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wechat_material`
+--
+
+LOCK TABLES `wechat_material` WRITE;
+/*!40000 ALTER TABLE `wechat_material` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wechat_material` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wechat_material_news`
+--
+
+DROP TABLE IF EXISTS `wechat_material_news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wechat_material_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `media_id` varchar(255) DEFAULT NULL,
+  `title` blob NOT NULL,
+  `thumb_media_id` varchar(255) DEFAULT NULL,
+  `show_cover_pic` varchar(400) DEFAULT NULL,
+  `author` varchar(400) DEFAULT NULL,
+  `digest` blob NOT NULL,
+  `url` varchar(400) DEFAULT NULL,
+  `content_source_url` varchar(400) DEFAULT NULL,
+  `thumb_url` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `news_media_id` (`media_id`),
+  CONSTRAINT `news_media_id` FOREIGN KEY (`media_id`) REFERENCES `wechat_material` (`media_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wechat_material_news`
+--
+
+LOCK TABLES `wechat_material_news` WRITE;
+/*!40000 ALTER TABLE `wechat_material_news` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wechat_material_news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wechat_menu`
 --
 
@@ -567,7 +624,7 @@ CREATE TABLE `wechat_menu` (
   `width` enum('1','2','3','4','5') DEFAULT '1',
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -706,4 +763,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-05 18:35:07
+-- Dump completed on 2017-02-17  4:06:56
