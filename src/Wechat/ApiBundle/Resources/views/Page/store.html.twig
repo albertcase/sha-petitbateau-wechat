@@ -11,167 +11,131 @@
 	<link rel="stylesheet" type="text/css" href="/source/valention/css/wx_shop.css">
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Z5FOXZbjH3AEIukiiRTtD7Xy"></script>
 <style type="text/css">
-body {
-	text-decoration: none;
-}
-#marker {
-	position: relative;
-	top: 8px;
-	margin: 0px 10px 0px 0px;
-}
-#baidu-map {
-	margin: 0px 0px 2px 0px;
-}
-#reader {
-	margin: 0px 0px 2px 0px;
-}
-#click-tip {
-	font-size: 14px;
-	margin: 20px 0px 2px 0px;
-}
-.btn {
-	display: inline-block;
-	padding: 4px 6px;
-	margin-bottom: 0;
-	font-size: 14px;
-	line-height: 20px;
-	color: #333;
-	text-align: center;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-	vertical-align: middle;
-	cursor: pointer;
-	background-color: #f5f5f5;
-	background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff),  to(#e6e6e6) );
-	background-image: -webkit-linear-gradient(top, #fff, #e6e6e6);
-	background-image: -o-linear-gradient(top, #fff, #e6e6e6);
-	background-image: linear-gradient(to bottom, #fff, #e6e6e6);
-	background-repeat: repeat-x;
-	border: 1px solid #ccc;
-	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	border-bottom-color: #b3b3b3;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
- filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =  '#ffffffff', endColorstr = '#ffe6e6e6', GradientType = 0 );
- filter: progid : DXImageTransform.Microsoft.gradient ( enabled = false );
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px  rgba(0, 0, 0, 0.05);
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px  rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px  rgba(0, 0, 0, 0.05);
-}
-#map-canvas {
-	height: 200px;
-	margin: 10px 0px 0px 0px;
-}
-#map-canvas img {
-	max-width: none !important;
-}
-#media {
-	margin: 0px;
-	padding: 0px;
-}
-#foot {
-	margin: 0px 0px 0px 0px;
-	padding: 0px;
-	font-size: 14px;
-	color: #3e3e3e;
-	line-height: 1.5;
-}
-#nickname {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	max-width: 90%;
-}
-ol, ul {
-	list-style-position: inside;
-}
-#activity-detail .page-content .text {
-	font-size: 14px;
-}
-.tel {
-	margin: 5px 0px 5px 0px;
-}
-.text {
-	margin: 0px 0px 5px 0px;
-}
-a:link {
-	color: #607FA6;
-	text-decoration: none;
-}
-a:visited {
-	color: #607FA6;
-	text-decoration: none;
-}
-a:hover {
-	color: #607FA6;
-	text-decoration: none;
-}
-a:active {
-	color: #607FA6;
-	text-decoration: none;
-}
-.tel a {
-	color: rgb(0, 128, 0);
-	font-size: 10.5pt;
-	font-family: 微软雅黑, sans-serif;
-}
-</style>
-<body id="activity-detail">
-	<div class="page-bizinfo">
-		<div class="header">
-			<h1 id="activity-name">{{ storename }}</h1>
-		</div>
-	</div>
-	<div class="page-content" style="margin: 0px">
-		<div class="text">
-			<p>
-{% if storelog is defined and storelog %}
-				<img src="{{ storelog }}">
-{% endif %}
-{% if storemap is defined and storemap %}
-				<img src="{{ storemap }}">
-{% endif %}
-			</p>
-  			<div id="map-canvas"></div>
-  			<div id="edit">
-          <p></p>
-{% if brandtype is defined and brandtype %}
-          <p>产品类型：</p>
-          <p>{{ brandtype }}</p>
-          <p></p>
-{% endif %}
-{% if address is defined and address %}
-          <p>地址：</p>
-          <p>{{ address|nl2br }}</p>
-          <p></p>
-{% endif %}
-{% if openhours is defined and openhours %}
-          <p>营业时间：</p>
-          <p>{{ openhours|nl2br }}</p>
-          <p></p>
-{% endif %}
-{% if phone is defined and phone %}
-          <p>电话：</p>
-{% endif %}
-        </div>
-{% if phone is defined and phone %}
-				<div id="tel" class="tel">
-					<a href="tel:{{ phone }}">{{ phone }}</a>
-				</div>
-{% endif %}
+	*{
+		margin: 0;
+		padding: 0;
+	}
 
-		<div id="foot">
+	body{
+		font-size: 12px;
+		line-height: 16px;
+		color: #2a2a2a;
+
+		-webkit-font-smoothing: antialiased; 
+	    -webkit-tap-highlight-color: rgba(0,0,0,0);
+	    -webkit-tap-highlight: rgba(0,0,0,0);
+	    -webkit-text-size-adjust: none;
+	    overflow: -moz-scrollbars-vertical;
+	}
+	
+	a{
+		color: #2a2a2a;
+		text-decoration: none;
+	}
+
+	.header{
+		width: 100%;
+		padding: 18px 0;
+		text-align: center;
+	}
+
+	.info{
+		width: 100%;
+		margin: 15px 0;
+		display: inline-block;
+	}
+
+	.info h1{
+		font-size: 22px;
+		width: 100%;
+		padding: 9px 0;
+		display: inline-block;
+	}
+
+	.info p{
+		width: 100%;
+		padding: 2px 0;
+		display: inline-block;
+	}
+
+	.info em{
+		font-style: normal;
+	}
+
+	.map{
+		border: 5px #fff solid;
+		border-radius: 3px;
+		margin: 0 0 30px 0;
+	}
+
+	/*.info em{
+		width: 24%;
+		font-style: normal;
+		float: left;
+		display: inline-block;
+	}
+
+	.info span{
+		width: 75%;
+		float: right;
+		display: inline-block;
+	}*/
+</style>
+<body>
+<div class="header">
+	<img src="/vfile/img/logo.png" width="30%">
+</div>
+<div class="content">
+	{% if storelog is defined and storelog %}
+		<p><img src="{{ storelog }}" width="100%"></p>
+	{% endif %}
+  			<!-- <div id="map-canvas"></div> -->
+	<div class="info">
+		<h1>{{ storename }}</h1>
+		
+		{% if brandtype is defined and brandtype %}
+		<p>
+		    <em>产品类型：</em>
+		    <span>{{ brandtype }}</span>
+		</p>
+		{% endif %}
+		
+		{% if address is defined and address %}
+		<p>
+	        <em>地址：</em>
+	        <span>{{ address|nl2br }}</span>
+	    </p>
+		{% endif %}
+
+		{% if openhours is defined and openhours %}
+		<p>
+	        <em>营业时间：</em>
+	        <span>{{ openhours|nl2br }}</span>
+	    </p>
+		{% endif %}
+
+		{% if phone is defined and phone %}
+		<p>
+		    <em>电话：</em>
+		    <span><a href="tel:{{ phone }}">{{ phone }}</span>
+		</p>
+		{% endif %}
+	</div>
+	
+	{% if storemap is defined and storemap %}
+		<img src="{{ storemap }}" width="100%" class="map">
+	{% endif %}
+
+		<!-- <div id="foot">
 			<p></p>
 		</div>
 		<input type="hidden" id="x" value="{{ lat }}">
 		<input type="hidden" id="y" value="{{ lng }}">
 		<input type="hidden" id="mapTitle" value="">
-		<input type="hidden" id="mapContent" value="">
-	</div>
+		<input type="hidden" id="mapContent" value=""> -->
+</div>
 	<!-- <script id="txt-title" type="txt/text">Valentino北京王府井in88精品店</script> -->
-	<script id="txt-sourceurl" type="txt/text"></script>
+<!-- 	<script id="txt-sourceurl" type="txt/text"></script>
 	<script type="text/javascript">
 		function getUrlParam(name) {
 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -224,4 +188,4 @@ a:active {
 			marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
 			generateBaiduMapForShop();
 		}
-</script>
+</script> -->
