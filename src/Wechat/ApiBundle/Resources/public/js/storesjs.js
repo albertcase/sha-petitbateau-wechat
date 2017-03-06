@@ -83,8 +83,8 @@ var stores = {
         'lng': $("#addstores .storelng").val(),
         'openhours': $("#addstores .storeopenhours").val(),
         'brandtype': $("#addstores .storebrandtype").val(),
-        'storelog': $("#addstores .newspic").attr("src"),
-        'storemap': $("#addstores .storemap").attr("src"),
+        'storelog': $("#addstores .newspic").eq(0).attr("src"),
+        'storemap': $("#addstores .newspic").eq(0).attr("src"),
       },
       dataType:'json',
       success: function(data){
