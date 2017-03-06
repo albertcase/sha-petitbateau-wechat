@@ -22,7 +22,7 @@ class storeslist extends FormRequest{
   }
 
   public function dealData(){
-    $stores = $this->container->get('my.dataSql')->searchData(array() ,array('id', 'storename', 'phone', 'brandtype', 'storelog'), 'stores');
+    $stores = $this->container->get('my.dataSql')->searchData(array() ,array('id', 'storename', 'phone', 'brandtype', 'storelog', 'storemap'), 'stores');
     if($stores && isset($stores['0'])){
       return array('code' => '10', 'msg' => 'get success' ,'list' => $stores);
     }

@@ -47,6 +47,14 @@ var stores = {
           },
         },
         {
+          "data": "storemap",
+          "render": function ( data, type, row ) {
+            if(!data)
+              return "";
+            return "<img src='"+data+"'/ style='width:120px'>";
+          },
+        },
+        {
           "class": "t-center",
           "data": null,
           "defaultContent": '<i class="fa fa-edit fa-lg"></i>'
@@ -76,6 +84,7 @@ var stores = {
         'openhours': $("#addstores .storeopenhours").val(),
         'brandtype': $("#addstores .storebrandtype").val(),
         'storelog': $("#addstores .newspic").attr("src"),
+        'storemap': $("#addstores .storemap").attr("src"),
       },
       dataType:'json',
       success: function(data){
@@ -105,6 +114,8 @@ var stores = {
       fileupload.replaceimage($("#addstores .newspic").prev());
     if($("#addstores .newsfile").length)
       $("#addstores .newsfile").val("");
+    if($("#addstores .storemap").length)
+      $("#addstores .storemap").val("");
 
   },
   initeditbox: function(){
@@ -119,6 +130,8 @@ var stores = {
       fileupload.replaceimage($("#editstores .newspic").prev());
     if($("#editstores .newsfile").length)
       $("#editstores .newsfile").val("");
+    if($("#editstores .storemap").length)
+      $("#editstores .storemap").val("");
   },
   ajaxeditid: null,
   ajaxinfo: function(){
@@ -142,6 +155,7 @@ var stores = {
           $("#editstores .storeopenhours").val(data.info.openhours);
           $("#editstores .storebrandtype").val(data.info.brandtype);
           fileupload.replaceinput(data.info.storelog, $("#editstores .newsfile"));
+          fileupload.replaceinput(data.info.storemap, $("#editstores .storemap"));
           publicall.gotoedit("editstores");
         }
         popup.openwarning(data.msg);
@@ -167,7 +181,8 @@ var stores = {
         'lng': $("#editstores .storelng").val(),
         'openhours': $("#editstores .storeopenhours").val(),
         'brandtype': $("#editstores .storebrandtype").val(),
-        'storelog': $("#editstores .newspic").attr("src"),
+        'storelog': $("#editstores .newspic").eq(0).attr("src"),
+        'storemap': $("#editstores .newspic").eq(1).attr("src"),
       },
       dataType:'json',
       success: function(data){
@@ -212,6 +227,12 @@ var stores = {
       fileupload.sendfiles($(this)[0].files[0], $(this));
     });
     $("#editstores").on("change", ".newsfile", function(){
+      fileupload.sendfiles($(this)[0].files[0], $(this));
+    });
+    $("#addstores").on("change", ".storemap", function(){
+      fileupload.sendfiles($(this)[0].files[0], $(this));
+    });
+    $("#editstores").on("change", ".storemap", function(){
       fileupload.sendfiles($(this)[0].files[0], $(this));
     });
     $("#editstores").on("click",".fa-times",function(){

@@ -40,6 +40,7 @@ class storesadd extends FormRequest{
       'openhours' => isset($this->getdata['openhours'])?$this->getdata['openhours']:'',
       'brandtype' => isset($this->getdata['brandtype'])?$this->getdata['brandtype']:'',
       'storelog' => isset($this->getdata['storelog'])?$this->getdata['storelog']:'',
+      'storemap' => isset($this->getdata['storemap'])?$this->getdata['storemap']:'',
     );
     if($this->container->get('my.dataSql')->insertData($sqlin, 'stores')){
       return array('code' => '10', 'msg' => 'add success');

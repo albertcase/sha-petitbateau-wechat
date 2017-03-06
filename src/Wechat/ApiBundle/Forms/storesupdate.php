@@ -41,6 +41,7 @@ class storesupdate extends FormRequest{
       'openhours' => isset($this->getdata['openhours'])?$this->getdata['openhours']:'',
       'brandtype' => isset($this->getdata['brandtype'])?$this->getdata['brandtype']:'',
       'storelog' => isset($this->getdata['storelog'])?$this->getdata['storelog']:'',
+      'storemap' => isset($this->getdata['storemap'])?$this->getdata['storemap']:'',
     );
     if($this->container->get('my.dataSql')->updateData(array('id' => $this->getdata['id']), $change, 'stores')){
       return array('code' => '10', 'msg' => 'update success');

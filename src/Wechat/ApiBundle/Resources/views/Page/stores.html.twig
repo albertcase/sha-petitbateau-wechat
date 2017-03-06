@@ -9,7 +9,7 @@
 
 {% block javascripts %}
   {{ parent() }}
-  <script type="text/javascript" src="{{ asset('bundles/wechatapi/js/storesjs.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/wechatapi/js/storesjs.js') }}"></script>
 {% endblock %}
 
 {% block maincontent %}
@@ -39,6 +39,7 @@
                                     <th>Call NO.</th>
                                     <th>Brand Type</th>
                                     <th>Store Log</th>
+                                    <th>Store Map</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -95,6 +96,10 @@
     <label>Store Log:</label>
     <input type="file" name="uploadfile" class="newsfile">
   </div>
+   <div class="form-group">
+     <label>Store Map:</label>
+     <input type="file" name="uploadfile" class="storemap">
+   </div>
 </div>
 
 
@@ -139,6 +144,10 @@
        <div class="form-group">
          <label>Store Log:</label>
          <input type="file" name="uploadfile" class="newsfile">
+       </div>
+       <div class="form-group">
+         <label>Store Map:</label>
+         <input type="file" name="uploadfile" class="storemap">
        </div>
     </div>
   </div>
