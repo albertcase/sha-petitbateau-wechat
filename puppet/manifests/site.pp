@@ -3,7 +3,7 @@ $env = 'dev'
 $user = 'ubuntu'
 $group = 'ubuntu'
 $home = '/home/ubuntu'
-$www = '/vagrant/sha-petitbateau-wechat/web'
+$www = '/vagrant/web'
 $project = 'base'
 # fpm
 $fpm_allowed_clients = '127.0.0.1'
