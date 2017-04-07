@@ -83,8 +83,8 @@ var stores = {
         'lng': $("#addstores .storelng").val(),
         'openhours': $("#addstores .storeopenhours").val(),
         'brandtype': $("#addstores .storebrandtype").val(),
-        'storelog': $("#addstores .newspic").eq(0).attr("src"),
-        'storemap': $("#addstores .newspic").eq(1).attr("src"),
+        'storelog': $("#storelog .newspic").eq(0).attr("src"),
+        'storemap': $("#storemap .newspic").eq(0).attr("src"),
       },
       dataType:'json',
       success: function(data){
@@ -177,8 +177,8 @@ var stores = {
         'lng': $("#editstores .storelng").val(),
         'openhours': $("#editstores .storeopenhours").val(),
         'brandtype': $("#editstores .storebrandtype").val(),
-        'storelog': $("#editstores .newspic").eq(0).attr("src"),
-        'storemap': $("#editstores .newspic").eq(1).attr("src"),
+        'storelog': $("#storelog .newspic").eq(0).attr("src"),
+        'storemap': $("#storemap .newspic").eq(0).attr("src"),
       },
       dataType:'json',
       success: function(data){
